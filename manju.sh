@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "hello world"
+echo "Ramesh:: Hi suresh"
+echo "Suresh:: Hi Ramesh"
