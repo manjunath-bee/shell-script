@@ -3,3 +3,4 @@
 MOVIES=("balu" "sudheer")
 
 echo "print:${MOVIES[@]}"
+echo "$PWD"
