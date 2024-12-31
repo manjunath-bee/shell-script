@@ -2,4 +2,4 @@
 
 MOVIES=("balu" "sudheer")
 
-echo "print:${MOVIES[0]}
+echo "print:${MOVIES[0]}"
