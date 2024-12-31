@@ -3,4 +3,4 @@
 MOVIES=("balu" "sudheer")
 
 echo "print:${MOVIES[@]}"
-echo "$0"
+echo "$HOME"
