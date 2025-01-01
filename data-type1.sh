@@ -8,3 +8,7 @@ echo "print value $NUMBER1"
 else 
 echo "print less value: $NUMBER1"
 fi
+
+MOVIES=("balu" "manju")
+
+echo "print:${MOVIES[0]}"
