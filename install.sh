@@ -4,6 +4,7 @@ USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
 dnf list installed mysql
+
 if [ $? -eq 0 ]; then
     echo "Already installed"
 else 
