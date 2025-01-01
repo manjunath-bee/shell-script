@@ -10,7 +10,7 @@ if [ $? -eq 0 ]; then
     echo "Already installed"
 else 
 
-    dnf install mysql-server -y
+    dnf install mysql -y
 
     if [ $? -eq 0 ]; then
     echo "installed success"
