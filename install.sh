@@ -4,7 +4,7 @@ USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
 PATH=$(which mysql)
-if [  $PATH -eq '/usr/bin/mysql' ]
+if [ $PATH -eq '/usr/bin/mysql' ]
 then
 echo "mysql already installed"
 else 
