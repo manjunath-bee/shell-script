@@ -3,7 +3,8 @@
 USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
-if [ -f /etc/init.d/mysql* ]
+PATH=$(which mysql)
+if [  $PATH -eq /usr/bin/mysql ]
 then
 echo "mysql already installed"
 else 
