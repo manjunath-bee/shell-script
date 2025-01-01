@@ -3,14 +3,14 @@
 USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
-dnf list installed mysql-srever
+dnf list installed | grep mysql
 
 if [ $? -eq 0 ]; then
 
     echo "Already installed"
 else 
 
-    dnf install mysql-server -y
+    dnf install mysql-serve -y
 
     if [ $? -eq 0 ]; then
 
