@@ -1,4 +1,4 @@
-if [ -f /etc/init.d/mysql* ]; then
+if [ -f /usr/bin/mysql ]; then
     echo "installed"
 else 
     echo "not installed"
