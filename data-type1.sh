@@ -11,4 +11,4 @@ fi
 
 MOVIES=("balu" "manju")
 
-echo "print:${MOVIES[0]}"
+echo "print:${MOVIES[@]}"
