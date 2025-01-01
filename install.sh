@@ -3,7 +3,7 @@
 USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
-dnf list installed mysql
+dnf list installed |grep mysql
 
 if [ $? -eq 0 ]; then
 
@@ -13,7 +13,7 @@ else
     dnf install mysql-server -y
 
     if [ $? -eq 0 ]; then
-    
+
     echo "installed success"
 else 
     echo "not successful"
