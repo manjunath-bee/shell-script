@@ -3,8 +3,7 @@
 USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
-ARR=$(dnf list installed | grep mysql)
-if [ $? -eq 0 ]
+if [ -f /etc/init.d/mysql* ]
 then
 echo "mysql already installed"
 else 
