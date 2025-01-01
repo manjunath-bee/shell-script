@@ -16,7 +16,7 @@ else
 
     echo "installed success"
 else 
-    echo "not successful"
+    echo "install not successful"
     exit 1
 fi
 fi
