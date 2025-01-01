@@ -5,6 +5,7 @@ if [ $USERID -eq 0 ]
 then
 ARR=$(dnf list installed | grep mysql)
 BBB=$?
+echo "print $ARR"
 if [ $BBB -eq 0 ]
 then
 echo "mysql already installed"
