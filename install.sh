@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-if [$USERID -eq 0]
+if [ $USERID -eq 0 ] 
 then
 dnf install mysql-server -y
 else 
