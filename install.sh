@@ -3,7 +3,9 @@
 USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
-if [ -f /usr/bin/mysql ]; then
+ARR=$(dnf list installed | grep mysql)
+EXCE=$?
+if [ $EXCE -eq 0 ]; then
     echo "installed"
 else 
     dnf install mysql-server -y
