@@ -2,7 +2,7 @@
 
 NUMBER1=$1
 
-if [$NUMBER1 -gt 100]
+if [$NUMBER1 -lt 100]
 then
 echo "print value $NUMBER1"
 else 
