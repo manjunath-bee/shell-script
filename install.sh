@@ -3,7 +3,13 @@
 USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
+dnf list installed | grep mysql
+if [$? -eq 0]
+then
+echo "mysql already installed"
+else 
 dnf install mysql-server -y
+fi
 else 
  echo "User dont have sufficient privilage"
  exit 1
