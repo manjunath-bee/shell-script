@@ -3,7 +3,7 @@
 USERID=$(id -u)
 if [ $USERID -eq 0 ] 
 then
-dnf list installed |grep mysql
+dnf list installed mysql-srever
 
 if [ $? -eq 0 ]; then
 
