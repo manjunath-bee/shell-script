@@ -1,9 +1,10 @@
 #!/bin/bash
 
 NUMBER1=$1
-NUMBER2=$2
 
-SUM=$(($NUMBER1+$NUMBER2))
-TIMESTAMP=$(date)
-
-echo "Curent time $TIMESTAMP sum of $NUMBER1 and $NUMBER2:$SUM"
+if [$NUMBER1 -gt 100]
+then
+echo "print value $NUMBER1"
+else 
+echo "print less value: $NUMBER1"
+fi
