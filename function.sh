@@ -18,7 +18,7 @@ then
 echo " User not having sufficent permissions"
 exist 1
 else
- dnf list installed |gerp mysql
+ dnf list installed |grep mysql
 
  if [ $? -eq 0 ]
 then 
