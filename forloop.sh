@@ -35,6 +35,7 @@ else
 dnf install $@ -y 
 
 VALIDATE $? "$@" >>$FULLPATH
-fi
-fi
 done
+fi
+fi
+
