@@ -26,15 +26,15 @@ exist 1
 else
 for PROGRAM in $@
 do
- dnf list installed |grep $@
+ dnf list installed |grep $PROGRAM
 
  if [ $? -eq 0 ]
 then 
-echo -e "$G Already Installed $@" >>$FULLPATH
+echo -e "$G Already Installed $PROGRAM" >>$FULLPATH
 else
-dnf install $@ -y 
+dnf install $PROGRAM -y 
 
-VALIDATE $? "$@" >>$FULLPATH
+VALIDATE $? "$PROGRAM" >>$FULLPATH
 done
 fi
 fi
