@@ -12,9 +12,9 @@ FULLPATH="$PATH1/$FILE1"
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
-echo -e "$G $2..succussful" 
+echo -e "$G $2..succussful" >>$FULLPATH
 else 
-echo -e "$R $2 Failed" 
+echo -e "$R $2 Failed" >>$FULLPATH
 exist 1
 fi
 }
