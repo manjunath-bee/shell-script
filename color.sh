@@ -4,8 +4,6 @@ USERID=$(id -u)
 
 R="\e[31m"
 G="\e[32m"
-PATH="/var/log/shell-script"
-FILE="log.txt"
 
 VALIDATE(){
     if [ $1 -eq 0 ]
