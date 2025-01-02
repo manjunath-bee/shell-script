@@ -5,9 +5,9 @@ USERID=$(id -u)
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
-echo "succussful"
+echo "Mysql..succussful"
 else 
-echo "Failed"
+echo "Mysql Failed"
 exist 1
 fi
 }
