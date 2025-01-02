@@ -10,9 +10,9 @@ FULLPATH="$PATH/$FILE"
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
-echo -e "$G $2..succussful" &>$FULLPATH
+echo -e "$G $2..succussful"&>$FULLPATH
 else 
-echo -e "$R $2 Failed"  &>$FULLPATH
+echo -e "$R $2 Failed"&>$FULLPATH
 exist 1
 fi
 }
@@ -20,14 +20,14 @@ fi
 if [ $USERID -ne 0 ]
 then 
 
-echo " User not having sufficent permissions"  &>$FULLPATH
+echo " User not having sufficent permissions"&>$FULLPATH
 exist 1
 else
  dnf list installed |grep mysql
 
  if [ $? -eq 0 ]
 then 
-echo -e "$G Already Installed MYSQL"  &>$FULLPATH
+echo -e "$G Already Installed MYSQL"&>$FULLPATH
 else
 dnf install mysql-server -y
 VALIDATE $? "mysql"
