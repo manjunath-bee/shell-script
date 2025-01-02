@@ -6,7 +6,7 @@ R="\e[31m"
 G="\e[32m"
 PATH="/var/log/shell-script"
 FILE="log.txt"
-FULLPATH="$PATH/$FILE"
+
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
