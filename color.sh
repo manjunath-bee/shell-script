@@ -5,9 +5,9 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 
-PATH="/var/log/shell-script"
-FILE="log.txt"
-FULLPATH="$PATH/$FILE"
+PATH1="/var/log/shell-script"
+FILE1="log.txt"
+FULLPATH="$PATH1/$FILE1"
 
 VALIDATE(){
     if [ $1 -eq 0 ]
