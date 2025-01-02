@@ -29,9 +29,9 @@ else
 
  if [ $? -eq 0 ]
 then 
-echo -e "$G Already Installed MYSQL" 
+echo -e "$G Already Installed MYSQL" >>$FULLPATH
 else
-dnf install mysql-server -y
+dnf install mysql-server -y >>$FULLPATH
 VALIDATE $? "mysql"
 fi
 fi
