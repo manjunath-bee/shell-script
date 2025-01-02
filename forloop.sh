@@ -35,7 +35,8 @@ else
 dnf install $PROGRAM -y 
 
 VALIDATE $? "$PROGRAM" >>$FULLPATH
-done
+
 fi
+done
 fi
 
