@@ -1,12 +1,12 @@
 #!/bin/bash
 
 USERID=$(id -u)
-R="\033[1;32m"
+R="\e[31m"
 
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
-echo -e "$2..$R succussful"
+echo -e "$2..${R} succussful"
 else 
 echo "$2 Failed"
 exist 1
@@ -23,7 +23,7 @@ else
 
  if [ $? -eq 0 ]
 then 
-echo -e "$R Already Installed MYSQL"
+echo -e "${R} Already Installed MYSQL"
 else
 dnf install mysql-server -y
 VALIDATE $? "mysql"
