@@ -2,12 +2,13 @@
 
 USERID=$(id -u)
 
+
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
-echo "Mysql..succussful"
+echo "$2..succussful"
 else 
-echo "Mysql Failed"
+echo "$2 Failed"
 exist 1
 fi
 }
@@ -25,7 +26,7 @@ then
 echo " Already Installed MYSQL"
 else
 dnf install mysql-server -y
-VALIDATE $?
+VALIDATE $? "mysql"
 fi
 fi
 
