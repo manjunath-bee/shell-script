@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-R="\e [31m"
+R="\033[1;32m"
 
 VALIDATE(){
     if [ $1 -eq 0 ]
