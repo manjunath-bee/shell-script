@@ -12,7 +12,7 @@ exist 1
 fi
 }
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then 
 
 echo " User not having sufficent permissions"
