@@ -19,7 +19,8 @@ echo " User not having sufficent permissions"
 exist 1
 else
  dnf list installed mysql
- IF [$? -eq 0]
+
+ if [ $? -eq 0 ]
 then 
 echo " Already Installed MYSQL"
 else
