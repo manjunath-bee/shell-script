@@ -33,6 +33,7 @@ then
 echo -e "$G Already Installed $PROGRAM" >>$FULLPATH
 else
 dnf install $PROGRAM -y 
+echo "dnf install $PROGRAM -y"
 
 VALIDATE $? "$PROGRAM" >>$FULLPATH
 
