@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -12,9 +11,9 @@ FULLPATH="$PATH1/$FILE1"
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
-echo -e "$G $2..succussful" >>$FULLPATH
+echo -e "$G $2..succussful" 
 else 
-echo -e "$R $2 Failed" >>$FULLPATH
+echo -e "$R $2 Failed" 
 exist 1
 fi
 }
@@ -31,8 +30,8 @@ else
 then 
 echo -e "$G Already Installed MYSQL" >>$FULLPATH
 else
-dnf install mysql-server -y >>$FULLPATH
-VALIDATE $? "mysql"
+dnf install mysql-server -y 
+VALIDATE $? "mysql" >>$FULLPATH
 fi
 fi
 
