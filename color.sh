@@ -1,7 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
+PATH="/var/log/shell-script/"
+FILE="log.txt"
+FULLPATH="$PATH/$FILE"
 R="\e[31m"
 G="\e[32m"
 
