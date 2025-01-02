@@ -21,7 +21,7 @@ else
  dnf list installed mysql
  IF [$? -eq 0]
 then 
-echo " Installed MYSQL"
+echo " Already Installed MYSQL"
 else
 dnf install mysql -y
 VALIDATE $?
