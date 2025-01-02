@@ -7,7 +7,7 @@ VALIDATE(){
 then 
 echo "succussful"
 else 
-echo "failed"
+echo "Failed"
 exist 1
 fi
 }
@@ -18,7 +18,7 @@ then
 echo " User not having sufficent permissions"
 exist 1
 else
- dnf list installed mysql
+ dnf list installed |gerp mysql
 
  if [ $? -eq 0 ]
 then 
