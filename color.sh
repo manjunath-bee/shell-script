@@ -3,7 +3,7 @@
 USERID=$(id -u)
 
 R="\e[31m"
-G="\e[31m"
+G="\e[32m"
 
 VALIDATE(){
     if [ $1 -eq 0 ]
