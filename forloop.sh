@@ -24,17 +24,17 @@ then
 echo " User not having sufficent permissions"
 exist 1
 else
-
- dnf list installed |grep mysql
+for PROGRAM in $@
+do
+ dnf list installed |grep $@
 
  if [ $? -eq 0 ]
 then 
-echo -e "$G Already Installed MYSQL" >>$FULLPATH
+echo -e "$G Already Installed $@" >>$FULLPATH
 else
-dnf install mysql-server -y 
+dnf install $@ -y 
 
-VALIDATE $? "mysql" >>$FULLPATH
+VALIDATE $? "$@" >>$FULLPATH
 fi
 fi
-
-
+done
