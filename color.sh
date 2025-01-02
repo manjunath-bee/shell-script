@@ -7,7 +7,7 @@ R="\e[31m"
 VALIDATE(){
     if [ $1 -eq 0 ]
 then 
-echo -e "$2..$R succussful"
+echo -e "$R $2..succussful"
 else 
 echo "$2 Failed"
 exist 1
