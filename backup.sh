@@ -11,5 +11,6 @@ do
     if [ $USAGE -ge $DISK_THROSOLD ] 
     then 
      MSG="HIGH disk utilzation: $PARTHITION : $USAGE"
+     echo $MSG
     fi
 done <<< $DISK_INFO
