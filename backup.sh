@@ -9,4 +9,4 @@ while read
 while read -r line;
 do
     echo $line
-done < "$DISK_INFO"
+done <<< $DISK_INFO
