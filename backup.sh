@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISK_INFO=$(df -hT| grep xfs)
-DISK_THROSOLD=5
+DISK_THROSOLD=30
 MSG=""
 
 while read -r line;
