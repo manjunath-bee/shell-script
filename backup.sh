@@ -8,5 +8,7 @@ while read -r line;
 do
     USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
     PARTHITION=$(echo $line | awk -F " " '{print $NF}')
-    echo $PARTHITION
+    if [ $USAGE -ge $DISK_THROSOLD]
+    then 
+    $MSG="HIGH disk utilzation: $PARTHITION $USAGE"
 done <<< $DISK_INFO
