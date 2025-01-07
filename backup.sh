@@ -10,7 +10,7 @@ do
     PARTHITION=$(echo $line | awk -F " " '{print $NF}')
     if [ $USAGE -ge $DISK_THROSOLD ] 
     then 
-     MSG+="HIGH disk utilzation: $PARTHITION : $USAGE /n"
+     MSG+="HIGH disk utilzation: $PARTHITION : $USAGE \n"
      
     fi
 done <<< $DISK_INFO
