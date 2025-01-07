@@ -1,5 +1,5 @@
 #!/bin/bash
 
-PARAMETER1='balu"
+PARAMETER1=balu
 
-echo "manju : $PARAMETER1"
+echo manju : $PARAMETER1
