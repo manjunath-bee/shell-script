@@ -6,5 +6,5 @@ MSG=""
 
 while read -r line;
 do
-    USAGE=$(echo $line | aws -F " " '{print $6F}')
+    USAGE=$(echo $line | awk -F " " '{print $6F}')
 done <<< $DISK_INFO
