@@ -2,6 +2,6 @@
 
 PARAMETER2=balu2
 
-source ./Script2.sh
+source ./Script1.sh
 
 echo manju : $PARAMETER1 : $PARAMETER2
