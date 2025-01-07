@@ -7,5 +7,5 @@ MSG=""
 while read -r line;
 do
     USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
-    echo $USAGE
+    PARTHITION=$(echo $line | awk -F " " '{print $NF}')
 done <<< $DISK_INFO
