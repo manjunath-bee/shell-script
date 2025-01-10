@@ -27,28 +27,7 @@
 #
 #
 
-# This function will wait 20 seconds and show the percent from the wait from 10% till 100%
-function waiting () {
-   for c in `seq 1 10` 
-   do
-      let c*=10
-      echo -ne "$c%\033[0K\r"
-      sleep 2
-   done
-}
 
-# This function will check if the return of a command was empty, case the return is empty meaning that the object already was deleted from amazon
-function checkResult()
-{
-   result="$1"
-   if [ "z$result" == "z" ]; then
-      return 0
-   else
-   echo "[Result: $result]"
-     waiting
-     return 1
-   fi 
-}
 
 echo "Excluding RDS instance"
 echo "checking RDS instance name:"
