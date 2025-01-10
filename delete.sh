@@ -29,20 +29,12 @@
 
 
 
-echo "Excluding RDS instance"
-echo "checking RDS instance name:"
-for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --output text` ; do 
-  echo "Deleting: $RDS_name" 
-  aws rds delete-db-instance --db-instance-identifier "$RDS_name" --skip-final-snapshot 
-  waiting
-done
-
 echo "disable proction RDS instance"
 echo "checking RDS instance name:"
 for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --output text` ; do 
   echo "Deleting: $RDS_name" 
   aws rds modify-db-instance --db-instance-identifier "$RDS_name"  --no-deletion-protection --apply-immediately
-  waiting
+  
 done
 
 echo "Excluding RDS instance"
@@ -50,7 +42,6 @@ echo "checking RDS instance name:"
 for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --output text` ; do 
   echo "Deleting: $RDS_name" 
   aws rds delete-db-instance --db-instance-identifier "$RDS_name" --skip-final-snapshot 
-  waiting
 done
 
 
