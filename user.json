@@ -1,0 +1,16 @@
+{
+    "username":"manju",
+    "age" :20,
+    "address" :[
+    {
+        "type":"per",
+        "hosuse":120,
+        "city" : "bellary"
+    },
+    {
+        "type":"per",
+        "hosuse":120,
+        "city" : "bellary"
+    }
+]
+}

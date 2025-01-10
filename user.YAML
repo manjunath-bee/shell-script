@@ -1,0 +1,22 @@
+- name :  manjunath
+  email : manju@gmail.com
+  adress : 
+  - type : per
+    houseno : 120
+    city : bellary
+  - type : cur
+    houseno : 120
+    city : bellary
+   
+- name :  Sudheer
+  email : sudheer@gmail.com
+  adress : 
+  - type : per
+    houseno : 120
+    city : bellary
+  - type : cur
+    houseno : 120
+    city : bellary
+   
+
+ 

@@ -1,0 +1,27 @@
+<Students>
+<student>
+<name>Manjunath</name>
+<age>90</age>
+<address>
+  <per>
+  <hsouneno>120</hsouneno>
+  </per>
+  <current>
+  <hsouneno>120</hsouneno>
+  </current>
+</address>
+</student>
+<student>
+<name>Manjunath</name>
+<age>90</age>
+<address>
+  <per>
+  <hsouneno>120</hsouneno>
+  </per>
+  <current>
+  <hsouneno>120</hsouneno>
+  </current>
+</address>
+</student>
+</Students>
+
