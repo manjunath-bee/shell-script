@@ -44,5 +44,12 @@ for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanc
   aws rds delete-db-instance --db-instance-identifier "$RDS_name" --skip-final-snapshot 
 done
 
+echo "Excluding RDS instance"
+echo "checking RDS instance name:"
+for cluster_name in `aws rds describe-db-clusters --query '*[].[DBClusterIdentifier]' --region=us-east-1 --output text` ; do 
+  echo "Deleting: $RDS_name" 
+  aws rds delete-db-cluster --db-cluster-identifier "cluster_name" --skip-final-snapshot --delete-automated-backups
+done
+
 
 
