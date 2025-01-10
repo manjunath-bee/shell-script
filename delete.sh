@@ -31,31 +31,31 @@
 
 echo "disable proction RDS instance"
 echo "checking RDS instance name:"
-for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --region=us-east-1 --output text` ; do 
+for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --region=us-east-2 --output text` ; do 
   echo "Deleting: $RDS_name" 
-  aws rds modify-db-instance --db-instance-identifier "$RDS_name" --region=us-east-1 --no-deletion-protection --apply-immediately
+  aws rds modify-db-instance --db-instance-identifier "$RDS_name" --region=us-east-2 --no-deletion-protection --apply-immediately
   
 done
 
 echo "Excluding RDS instance"
 echo "checking RDS instance name:"
-for cluster_name in `aws rds describe-db-clusters --query '*[].[DBClusterIdentifier]' --region=us-east-1 --output text` ; do 
+for cluster_name in `aws rds describe-db-clusters --query '*[].[DBClusterIdentifier]' --region=us-east-2 --output text` ; do 
   echo "Deleting: $cluster_name" 
-  aws rds modify-db-cluster --db-cluster-identifier "$cluster_name" --region=us-east-1 --no-deletion-protection --apply-immediately
+  aws rds modify-db-cluster --db-cluster-identifier "$cluster_name" --region=us-east-2 --no-deletion-protection --apply-immediately
 done
 
 echo "Excluding RDS instance"
 echo "checking RDS instance name:"
-for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --region=us-east-1 --output text` ; do 
+for RDS_name in `aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --region=us-east-2 --output text` ; do 
   echo "Deleting: $RDS_name" 
-  aws rds delete-db-instance --db-instance-identifier "$RDS_name" --region=us-east-1 --skip-final-snapshot 
+  aws rds delete-db-instance --db-instance-identifier "$RDS_name" --region=us-east-2 --skip-final-snapshot 
 done
 
 echo "Excluding RDS instance"
 echo "checking RDS instance name:"
-for cluster_name in `aws rds describe-db-clusters --query '*[].[DBClusterIdentifier]' --region=us-east-1 --output text` ; do 
+for cluster_name in `aws rds describe-db-clusters --query '*[].[DBClusterIdentifier]' --region=us-east-2 --output text` ; do 
   echo "Deleting: $cluster_name" 
-  aws rds delete-db-cluster --db-cluster-identifier "$cluster_name"  --region=us-east-1 --skip-final-snapshot
+  aws rds delete-db-cluster --db-cluster-identifier "$cluster_name"  --region=us-east-2 --skip-final-snapshot
 done
 
 
