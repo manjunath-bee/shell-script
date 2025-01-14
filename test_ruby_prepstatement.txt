@@ -1,0 +1,69 @@
+
+require 'replcae'
+require 'logger'
+columns = [       
+  :amount,
+    :cc_last4,
+    :cc_first6,
+    :first_name,
+    :last_name,
+    :created_at,
+    :employee_id,
+    :employee_name,
+    :is_test,
+    :menu_items,
+    :payable,
+    :pos_type,
+    :pos_version,
+    :punchh_key,
+    :receipt_datetime,
+    :revenue_code,
+    :revenue_id,
+    :status,
+    :subtotal_amount,
+    :vendor_transaction_no,
+    :transaction_no,
+    :token,
+  :location_id, 
+  :business_id, 
+  :ipv4_addr, 
+  :receipt_datetime_parsed
+]
+
+h = {}
+columns.each {|column| h[column] = "$#{column}".to_sym }
+
+db[:receipts].on_duplicate_key_update(updated_at: Sequel::CURRENT_TIMESTAMP).prepare(:insert, :insert_receipt, h)
+
+punchh_key = "23e835ea-b110-4deb-b2d9-bd83fdca678a"
+receipt_time = Time.now
+data = { 
+        :amount=>88.5, 
+        :cc_last4=>"0000", 
+        :cc_first6=>"000000", 
+        :first_name=>nil, 
+        :last_name=>nil, 
+        :created_at => Time.now,
+        :employee_id=>nil, 
+        :employee_name=>nil, 
+        :is_test=>0, 
+        :menu_items=>"Effen Good|1.0|12.49|M|8971f840-f290-4c51-9037-c4e7946c55cf|eb135904-ef93-4199-b3b7-b43e8ceb7d3e|8056070f-dcb7-4543-a979-b6bc927679b1|1^OG Mule|1.0|12.49|M|19e67222-9200-436f-90ed-18ef8b810dc3|080c6f5d-b646-4674-8879-dbc1cb874bf3|8056070f-dcb7-4543-a979-b6bc927679b1|2^Purple Reign|1.0|12.49|M|fc309288-133d-4d94-a39e-ec4382b248b9|eb135904-ef93-4199-b3b7-b43e8ceb7d3e|8056070f-dcb7-4543-a979-b6bc927679b1|3^Sierra Hazy Little Draft|1.0|6.75|M|a213713d-4b4c-4ff6-ac93-9fcc8338f707|96e94a0a-6fba-4386-b4cd-4a1b9017951e|52500cef-f330-447b-9a84-51f1e8186f5b|4^No Side Car|1.0|0.0|M|691a0e18-8425-4b8c-9921-d7626363173e|3f06f1a2-64e2-4c58-af49-b06d39a1e01d|3f06f1a2-64e2-4c58-af49-b06d39a1e01d|4.1^Bacon & Hot Honey Flatbread|1.0|13.95|M|95783d62-1b6b-428d-a047-c08c6ecabbef|ea4ec882-c6d7-4998-a272-f23d304a8e50|93aaa727-a873-4996-ad21-7f4e5acc2b2b|5^Blue Moon Draft|1.0|6.75|M|4f782a7b-ad1a-46b0-9b73-99b1b04b4e7f|96e94a0a-6fba-4386-b4cd-4a1b9017951e|52500cef-f330-447b-9a84-51f1e8186f5b|6^No Side Car|1.0|0.0|M|691a0e18-8425-4b8c-9921-d7626363173e|3f06f1a2-64e2-4c58-af49-b06d39a1e01d|3f06f1a2-64e2-4c58-af49-b06d39a1e01d|6.1^Tito's Vodka Rocks|1.0|10.0|M|57c25857-e0d6-44f0-8a25-e7f73cf682f1|3c4a1fae-0b7e-4608-b399-32a5b3d8f196|8056070f-dcb7-4543-a979-b6bc927679b1|7^& Soda|1.0|0.0|M|997c1253-81f0-49bb-b174-883bb502fb5f|cbdd5a13-2c8a-441e-9e9f-5ac916d064f8|cbdd5a13-2c8a-441e-9e9f-5ac916d064f8|7.1^SALMON SLIDERS|1.0|16.75|M|c59f4bde-d83d-46c5-96d1-d5c4aaf55595|f4fd30db-b218-43a0-8938-590611cf8193|93aaa727-a873-4996-ad21-7f4e5acc2b2b|8^Sliders Blackened|1.0|0.5|M|00|00|00|8.1^Side Fries|1.0|0.0|M|1a3fb42d-45fd-499c-a1fe-73566a058691|94d55378-2959-4844-9767-606b46f859a7|94d55378-2959-4844-9767-606b46f859a7|8.2^Purple Reign|1.0|12.49|M|fc309288-133d-4d94-a39e-ec4382b248b9|eb135904-ef93-4199-b3b7-b43e8ceb7d3e|8056070f-dcb7-4543-a979-b6bc927679b1|9^The Dirty|1.0|12.49|M|7b2cc679-2dd4-4b4c-83a4-4c95776aeb13|eb135904-ef93-4199-b3b7-b43e8ceb7d3e|8056070f-dcb7-4543-a979-b6bc927679b1|10^OG Mule|1.0|12.49|M|19e67222-9200-436f-90ed-18ef8b810dc3|080c6f5d-b646-4674-8879-dbc1cb874bf3|8056070f-dcb7-4543-a979-b6bc927679b1|11^HH Draft $5.50 CP|1|1.25|D|a6423758-3768-4d97-87c9-707d8ad17544|00|00^HH $8 CMS|1|4.49|D|947e7828-db21-4230-8d77-d1c2125c1c27|00|00^HH $8 CMS|1|4.49|D|947e7828-db21-4230-8d77-d1c2125c1c27|00|00^HH Food $9|1|4.95|D|14de8181-af0e-4595-9fca-8c1b6079d006|00|00^HH $8 CMS|1|4.49|D|947e7828-db21-4230-8d77-d1c2125c1c27|00|00^HH $8 CMS|1|4.49|D|947e7828-db21-4230-8d77-d1c2125c1c27|00|00^HH $8 CMS|1|4.49|D|947e7828-db21-4230-8d77-d1c2125c1c27|00|00^HH Food $20|1|6.75|D|de2f12ed-068f-4f5d-b936-fd40d32bdb2f|00|00^HH $8 CMS|1|4.49|D|947e7828-db21-4230-8d77-d1c2125c1c27|00|00^HH Draft $5.50 CP|1|1.25|D|a6423758-3768-4d97-87c9-707d8ad17544|00|00^Tax|1|5.31|T|TaxId|Tax|Tax", 
+        :payable=>93.81, 
+        :pos_type=>"toastv3", 
+        :pos_version=>nil, 
+        :punchh_key=>punchh_key, 
+        :receipt_datetime=>receipt_time.to_s, 
+        :revenue_code=>nil, 
+        :revenue_id=>nil, 
+        :status=>nil, 
+        :subtotal_amount=>88.5, 
+        :vendor_transaction_no=>nil, 
+        :transaction_no=>punchh_key, 
+        :token=>"8b265ba226769d484872158a296c5eda", 
+        :location_id=>1234, 
+        :business_id=>1234, 
+        :ipv4_addr=>"127.0.0.1", 
+        :receipt_datetime_parsed=>receipt_time
+    }
+
+db.call(:insert_receipt, data)

@@ -1,0 +1,39 @@
+START RequestId: bd537ad6-d9bf-4319-99b4-8768c644c411 Version: $LATEST
+
+{
+    "timestamp": "2024-10-22T21:01:32.674",
+    "level": "INFO",
+    "logger": "contextlogger",
+    "message": "Received request - configured to not log request",
+    "lineno": 199,
+    "filename": "/var/task/via_logging_client/context_logging.py",
+    "process": 8,
+    "thread": 140357085414848,
+    "span_id": "7c731334ce2b516c",
+    "trace_id": "b682ac4eea76f00ffc18958713012d15",
+    "baggage": {
+        "context_id": "b682ac4eea76f00ffc18958713012d15",
+        "root_endpoint": "rider-account-infra-us1-prod-internalProxyHandler"
+    },
+    "invocation_baggage": {
+        "invocation_id": "bd537ad6-d9bf-4319-99b4-8768c644c411",
+        "stage": "prod",
+        "service": "rams-us1",
+        "lambda": "rams-us1-prod-authRider",
+        "aws_request_id": "bd537ad6-d9bf-4319-99b4-8768c644c411",
+        "env": "SND-LIVE",
+        "city_id": 91,
+        "rider_id": 57684
+    },
+    "service.name": "rams-us1-prod",
+    "team": "rider-account-core",
+    "faas.name": "rams-us1-prod-authRider",
+    "cloud.region": "us-east-1"
+}
+
+2024-10-22T21:01:42.691Z bd537ad6-d9bf-4319-99b4-8768c644c411 Task timed out after 10.02 seconds
+
+END RequestId: bd537ad6-d9bf-4319-99b4-8768c644c411
+
+REPORT RequestId: bd537ad6-d9bf-4319-99b4-8768c644c411	Duration: 10022.21 ms	Billed Duration: 10000 ms	Memory Size: 1024 MB	Max Memory Used: 218 MB	
+XRAY TraceId: 1-b682ac4e-ea76f00ffc18958713012d15	Sampled: true	
